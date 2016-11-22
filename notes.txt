@@ -1,3 +1,25 @@
 sudo docker rm haproxy; sudo docker build . --tag custom_haproxyimage; sudo docker run --name haproxy -p 8100:8100 custom_haproxyimage:2
 
 echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+
+
+
+global
+  maxconn 4096
+  # user haproxy
+  # group haproxy
+  debug
+  # log 127.0.0.1 local0 notice
+
+defaults
+  log   global
+  mode  http
+  timeout connect   5000
+  timeout client    10000
+  timeout server    10000
+
+listen google
+  bind *:80
+
+  server google1 62.78.98.222:80
+  server google2 62.78.98.241:80
