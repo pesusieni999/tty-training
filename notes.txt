@@ -23,3 +23,31 @@ listen google
 
   server google1 62.78.98.222:80
   server google2 62.78.98.241:80
+
+
+
+{
+       "message" => "testetete",
+        "@version" => "1",
+    "@timestamp" => "2016-11-25T09:43:48.842Z",
+          "host" => "172.17.0.1",
+       "headers" => {
+              "request_method" => "POST",
+                "request_path" => "/interface/",
+                 "request_uri" => "/interface/",
+                "http_version" => "HTTP/1.1",
+                   "http_host" => "localhost:8001",
+              "content_length" => "9",
+                 "http_accept" => "application/json, text/plain, */*",
+                 "http_origin" => "http://localhost:8001",
+             "http_user_agent" => "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36",
+                "content_type" => "application/json;charset=UTF-8",
+                    "http_dnt" => "1",
+                "http_referer" => "http://localhost:8001/",
+        "http_accept_encoding" => "gzip, deflate",
+        "http_accept_language" => "en-US,en;q=0.8,fi;q=0.6"
+    },
+       "ordered" => "1"
+}
+
+    { "_id" : { "$oid" : "5838091612bafae67b000016" }, "message" : "Test item", "@version" : "1", "@timestamp" : "\"2016-11-25T09:49:09.546Z\"", "host" : "172.17.0.1", "headers" : { "request_method" : "POST", "request_path" : "/interface/", "request_uri" : "/interface/", "http_version" : "HTTP/1.1", "http_host" : "localhost:8001", "content_length" : "9", "http_accept" : "application/json, text/plain, */*", "http_origin" : "http://localhost:8001", "http_user_agent" : "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36", "content_type" : "application/json;charset=UTF-8", "http_dnt" : "1", "http_referer" : "http://localhost:8001/", "http_accept_encoding" : "gzip, deflate", "http_accept_language" : "en-US,en;q=0.8,fi;q=0.6" }, "ordered" : "1" }
