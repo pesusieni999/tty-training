@@ -57,7 +57,6 @@
 				 * Remember --rest command line switch!
 				 */
 				$http.get(window.location.href+'ordersDB/orders/?filter_ordered=true').then(function(response) {
-				// $http.get(window.location.href+'ordersDB/orders?filter_ordered=1').then(function(response) {
 					// Get data
 					content = angular.fromJson(response.data);
 
