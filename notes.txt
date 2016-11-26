@@ -3,7 +3,6 @@ sudo docker rm haproxy; sudo docker build . --tag custom_haproxyimage; sudo dock
 echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
 
 
-
 global
   maxconn 4096
   # user haproxy

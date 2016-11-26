@@ -31,7 +31,7 @@ Remove, build and run logstash
 sudo docker rm -f logstash; sudo docker build . --tag customlogstash:2; sudo docker run -d --name logstash -p 2000:2000 customlogstash:2
 
 Remove, build and run haproxy
-sudo docker rm -f haproxy; sudo docker build . --tag customhaproxy:2; sudo docker run -d --name haproxy -p 80:80 customhaproxy:2
+sudo docker rm -f haproxy; sudo docker build . --tag customhaproxy:2; sudo docker run -d --name haproxy -p 8000:8000 customhaproxy:2
 
 Remove, build and run frontend
 sudo docker rm -f frontend; sudo docker build . --tag customimage:2; sudo docker run -d --name frontend -p 8080:8080 customimage:2
@@ -39,6 +39,9 @@ sudo docker rm -f frontend; sudo docker build . --tag customimage:2; sudo docker
 
 Name + filter_ordered=1 arvot Mongolle.
 Lisää se ordered=1
+
+
+curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Frodo2345", "ordered" : "1" }' http://172.17.0.1:8000/ordersDB/orders/
 
 
 
