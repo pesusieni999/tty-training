@@ -1,0 +1,48 @@
+git clone git@github.com:<user>/tty-training.git
+cd tty-training/frontend
+
+sudo docker run -d --name mongo -p 91:27017 -p 92:28017 mongo:3 mongod --rest
+# run is the base command, start a container
+# -d : Own window instead of terminal
+# --name, name of the container, otherwise random
+# -p external_port:container_port, exposing ports so external services can use it.
+# mongo, the name of the image, :3 the tag or version
+# mongod --rest, command we wish to run within the container.
+
+sudo docker build . --tag customimage:2
+# build, build a container
+# --tag, give our image a name customimage and version 2
+
+sudo docker run -d --name frontend -p 80:80 customimage:2
+
+If using dockertoolbox, use swarm IP: 192.168.99:100
+
+sudo docker logs <container name>
+# Show logs for container.
+
+sudo docker exec -ti <container name> <process name>
+# Start process in the container.
+
+
+Remove and recreate MongoDB
+sudo docker rm -f mongo; sudo docker run -d --name mongo -p 91:27017 -p 92:28017 mongo:3 mongod --rest
+
+Remove, build and run logstash
+sudo docker rm -f logstash; sudo docker build . --tag customlogstash:2; sudo docker run -d --name logstash -p 2000:2000 customlogstash:2
+
+Remove, build and run haproxy
+sudo docker rm -f haproxy; sudo docker build . --tag customhaproxy:2; sudo docker run -d --name haproxy -p 80:80 customhaproxy:2
+
+Remove, build and run frontend
+sudo docker rm -f frontend; sudo docker build . --tag customimage:2; sudo docker run -d --name frontend -p 8080:8080 customimage:2
+
+
+Name + filter_ordered=1 arvot Mongolle.
+Lisää se ordered=1
+
+
+
+docker swarm join --token SWMTKN-1-4nujja3283sp9vjavkl9c7firq0zwp963bu7vcd7kc4por7vyg-3d7g8z1y6l00v1whuvpgxw889 127.0.0.1:2377
+
+
+docker swarm join --token SWMTKN-1-30e9kb7x31qgij8yu17mrvhuw3uvmkfibbnu6fcygc0lv8zm4a-ax0s5xck4xb82b66ufaq5dhgd 172.31.27.74:2377
