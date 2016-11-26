@@ -1,3 +1,5 @@
+This file contains random notes made during the exercise project.
+
 git clone git@github.com:<user>/tty-training.git
 cd tty-training/frontend
 
