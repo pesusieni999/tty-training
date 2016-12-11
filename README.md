@@ -2,8 +2,8 @@
 TUT Palvelupohjaiset järjestelmät 2/2016.
 
 ## Members of the group are
-* Juha Löflund, 218619, juha.suominen@student.tut.fi
-* Ville Myllynen, 234334, ville.myllynen@student.tut.fi
+* Juha Löflund, juha.suominen@student.tut.fi
+* Ville Myllynen, ville.myllynen@student.tut.fi
 
 ## Purpose of this project.
 * Exercise Docker (https://www.docker.com)
